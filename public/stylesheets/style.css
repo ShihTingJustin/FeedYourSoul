@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
+
+.navbar .navbar-brand, .header-right a {
+  color: #dc3543;
+}
+
+.navbar .navbar-brand:hover {
+  color: #ff626f;
+}
+
+.header-right a:hover {
+  color: #ff626f;
+  text-decoration: none;
+}
+
+.navbar-brand {
+  font-family: 'Mr Dafoe', cursive;
+  font-size: xx-large;
+}
+
+.search-bar .search-bar-outer {
+  margin: 0 auto;
+  max-width: 680px;
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 20px 30px;
+  border: 0;
+  margin-top: -60px;
+  /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.search-bar .search-bar-inner h4 {
+  color: #ffffff;
+}
+
+.form-control::placeholder {
+  color: #aaaaaa;
+  font-size: 0.8rem;
+}
+
+.btn-major {
+  background-color: #dc3543;
+  color: white;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #ced4da;
+}
+
+.card {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card img{
+  height: 180px;
+}
+
+.card-title{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.restaurant-category {
+  color: #666666;
+  font-size: 0.8rem;
+}
+
+.restaurant-show-title {
+  position: relative;
+  top: 50px;
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.container {
+  position: relative;
+}
+
+.search-bar {
+  margin-top: 6rem;
+}
+
+.content-block {
+  margin-top: 3rem;
+  margin-bottom: 10rem;
+}
+
+/* .footer-container {
+  background-color: #f7f7f7;
+} */
+
+.page-footer {
+  margin: 0 6rem 0 6rem;
+  border-top: 1px solid #DDDDDD;
+}
+
+.copyright {
+  border-top: 1px solid #DDDDDD;
+  font-size: 0.8rem;
+}
+
+.copyright a, .foot-info a {
+  color: #343A40;
+}
+
+.copyright a:hover {
+  text-decoration: none;
+}
+
+.foot-info a:hover {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 992px) {
+  
+  .card img{
+    height: 115px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  
+  .restaurant-show-title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  
+  .card img{
+    height: auto;
+  }
+  
+}
