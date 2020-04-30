@@ -7,6 +7,6 @@
 1. 搜尋餐廳名稱
 
 ## 環境
-* Node.js: v10.15.0
-* EXPRESS: v4.17.1
-* EXPRESS-Handlebars: v4.0.3
+* Node.js: 10.15.0
+* EXPRESS: 4.17.1
+* EXPRESS-Handlebars: 4.0.3
