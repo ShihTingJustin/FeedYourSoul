@@ -15,7 +15,6 @@
 
 .navbar-brand {
   font-family: 'Mr Dafoe', cursive;
-  font-size: xx-large;
 }
 
 .search-bar .search-bar-outer {
@@ -84,8 +83,13 @@
   margin-top: 6rem;
 }
 
-.content-block {
+.content-block, .nothing-page {
   margin-top: 3rem;
+  margin-bottom: 10rem;
+}
+
+.show-block {
+  margin-top: 6rem;
   margin-bottom: 10rem;
 }
 
