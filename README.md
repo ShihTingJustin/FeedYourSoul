@@ -1,5 +1,5 @@
 # Feed Your Soul
-一個使用 Node.js + Express 打造的餐廳美食網站，提供使用者註冊個人帳號，管理自己的餐廳清單，亦可搜尋餐廳名稱。
+一個使用 Node.js + Express 打造的餐廳美食網站。
 
 ## 專案畫面
 ![](https://i.imgur.com/nqrLEDa.jpg)
