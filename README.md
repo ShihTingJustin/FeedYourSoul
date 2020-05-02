@@ -10,5 +10,5 @@
 
 ## 環境
 * Node.js: v10.15.0
-* EXPRESS: v4.17.1
-* EXPRESS-Handlebars: v4.0.3
+* Express: v4.17.1
+* Express-Handlebars: v4.0.3
