@@ -35,22 +35,14 @@ app.get('/search', (req, res) => {
   // console.log(restaurant)
   if (restaurant.length > 0) {
     res.render('index', { restaurants: restaurant, keyword: req.query.keyword })
+
   } else {
     res.render('nothing', { keyword })
   }
 })
 
-
-
-
-
-
-
-
-
-
-
 // start and listen on the Express server
 app.listen(port, () => {
   console.log(`Express is listening on localhost:${port}`)
 })
+
