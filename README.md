@@ -1,14 +1,37 @@
 # Feed Your Soul
-一個使用 Node.js + Express 打造的餐廳美食網站。
+A simple restaurant website built with Node.js and Express.
 
-## 專案畫面
+## Features
+1. Find your favorite restaurant
+2. Search restaurant by name
+
 ![](https://i.imgur.com/nqrLEDa.jpg)
 
-## 功能
-1. 瀏覽多種餐廳
-2. 搜尋餐廳名稱
+## Getting Started
+Clone repository to your local computer
+```
+$ git clone https://github.com/ShihTingJustin/FeedYourSoul.git
+```
+Install by [npm](https://www.npmjs.com/)
+```
+$ npm install
+```
+Execute 
+```
+$ npm run dev 
+```
+Terminal show the message 
+ ```
+"Express is listening on localhost:3000"
+```
+Now you can browse the website on 
+```
+http://localhost:3000
+```
+## Built With
+* Node.js: 10.15.0
+* Express: 4.17.1
+* Express-Handlebars: 4.0.3
 
-## 環境
-* Node.js: v10.15.0
-* Express: v4.17.1
-* Express-Handlebars: v4.0.3
+## Author
+Justin Huang 黃士庭 
