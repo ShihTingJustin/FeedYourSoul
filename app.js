@@ -1,6 +1,7 @@
 // require packages used in the project
 const express = require('express')
 const app = express()
+const mongoose = require('mongoose')
 const rList = require('./restaurant.json')
 const port = 3000
 
@@ -10,6 +11,12 @@ const exphbs = require('express-handlebars')
 // setting template engine
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
+
+// setting database
+mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true })
+const db = mongoose.connection
+db.on('error', () => console.log('mongidb error!'))
+db.once('open', () => console.log('mongodb connected!'))
 
 // setting static files
 app.use(express.static('public'))
