@@ -1,29 +1,36 @@
 // require packages used in the project
 const express = require('express')
-const app = express()
 const mongoose = require('mongoose')
-const rList = require('./restaurant.json')
+const bodyParser = require('body-parser')
+// const rList = require('./restaurant.json')
+const Restaurant = require('./models/restaurant')
+const app = express()
 const port = 3000
 
 // require express-handlebars here
 const exphbs = require('express-handlebars')
 
 // setting template engine
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
-app.set('view engine', 'handlebars')
-
-// setting database
-mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true })
-const db = mongoose.connection
-db.on('error', () => console.log('mongidb error!'))
-db.once('open', () => console.log('mongodb connected!'))
+app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
+app.set('view engine', 'hbs')
 
 // setting static files
 app.use(express.static('public'))
 
+app.use(bodyParser.urlencoded({ extended: true }))
+
+// setting database
+mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true })
+const db = mongoose.connection
+db.on('error', () => console.log('mongodb error!'))
+db.once('open', () => console.log('mongodb connected!'))
+
 // routes setting
 app.get('/', (req, res) => {
-  res.render('index', { restaurants: rList.results })
+  Restaurant.find() //取出 model 裡所有資料
+    .lean()  // mongoose model 物件轉換成 JS array
+    .then(restaurants => res.render('index', { restaurants })) //資料傳給 index 樣板
+    .catch(error => console.error(error)) //錯誤處理
 })
 
 app.get('/restaurants/:r_id', (req, res) => {
