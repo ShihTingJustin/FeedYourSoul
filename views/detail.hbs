@@ -35,8 +35,9 @@
         {{ restaurant.description }}
       </p>
 
-      <img class="rounded mx-auto d-block mb-4 w-100" src="{{ restaurant.image }}" alt="{{ restaurant.name}}"
+      <img class="rounded mx-auto d-block mb-4 w-100" src="{{ restaurant.image }}" alt="{{ restaurant.name }}"
         style="max-width: 600px;">
+      <a href="/restaurants/{{ restaurant._id }}/edit">edit</a>
     </div>
   </div>
 </div>
