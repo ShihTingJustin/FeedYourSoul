@@ -15,15 +15,15 @@ const restaurantSchema = new Schema({
   },
   "image": {
     type: String,
-    required: true
+    required: false
   },
   "location": {
     type: String,
-    required: true
+    required: false
   },
   "phone": {
     type: String,
-    required: true
+    required: false
   },
   "google_map": {
     type: String,

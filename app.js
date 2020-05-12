@@ -33,10 +33,21 @@ app.get('/', (req, res) => {
     .catch(error => console.error(error)) //錯誤處理
 })
 
+app.get('/restaurants/new', (req, res) => {
+  return res.render('new')
+})
+
+app.post('/restaurants', (req, res) => {
+  const name = req.body.name
+  const category = req.body.category
+  return Restaurant.create({ name, category })
+    .then(() => res.redirect('/'))
+    .catch(error => console.log(error))
+})
+
 app.get('/restaurants/:r_id', (req, res) => {
   const restaurant = rList.results.find(r => r.id.toString() === req.params.r_id)
 
-  // console.log(req.route.path)
   res.render('show', { restaurants: restaurant })
 })
 
@@ -59,4 +70,3 @@ app.get('/search', (req, res) => {
 app.listen(port, () => {
   console.log(`Express is listening on localhost:${port}`)
 })
-
