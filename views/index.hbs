@@ -19,7 +19,7 @@
 <!-- restaurant list -->
 <div class="container">
   <div class="row content-block">
-    <div class="col-md-10 col-12 mx-auto">
+    <div class="col-md-10 col-12 mx-auto" id="card-block-top">
       <div class="card-columns">
         {{#each restaurants}}
         <a href="/restaurants/{{ this._id }}" class="text-secondary">
@@ -30,15 +30,25 @@
               <div class="restaurant-category mb-1">
                 <i class="fas fa-utensils pr-2"></i> {{ this.category }}
               </div>
-              <span class="badge badge-pill badge-danger font-weight-normal">
-                {{ this.rating }}
-                <i class="fas fa-star fa-xs"></i>
-              </span>
-              <a href="/restaurants/{{ this._id }}">detail</a>
-              <a href="/restaurants/{{ this._id }}/edit">edit</a>
-              <form action="">
-                <button type="submit">delete</button>
-              </form>
+              <div class="d-flex flex-wrap align-items-center mt-2">
+                <div class="d-flex">
+                  <span class="badge badge-pill badge-danger font-weight-normal">{{ this.rating }}<i
+                      class="fas fa-star fa-xs ml-1"></i>
+                  </span>
+                </div>
+                <div class="ml-auto" id="card-editor">
+                  <a href="/restaurants/{{ this._id }}">
+                    <i class="fas fa-info-circle mr-1"></i>
+                  </a>
+                  <a href="/restaurants/{{ this._id }}/edit">
+                    <i class="fas fa-pencil-alt mx-2"></i>
+                  </a>
+                  <form action="./restaurants/{{ this._id }}/delete" method="POST" style="display: inline;">
+                    <button type="submit" style="border: none; margin: 0 -0.3rem;" class="fas fa-times-circle">
+                    </button>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
         </a>

@@ -1,5 +1,5 @@
 <!-- ./views/show.handlebars -->
-<h1 class="mb-1 restaurant-show-title" id='restaurant-show-title'>{{ restaurant.name }}</h1>
+<h1 class="mt-5 mb-1 restaurant-show-title" id='restaurant-show-title'>{{ restaurant.name }}</h1>
 <div class="container show-block">
   <div class="row">
     <div class="col-12 col-md-10 mx-auto">
@@ -37,7 +37,12 @@
 
       <img class="rounded mx-auto d-block mb-4 w-100" src="{{ restaurant.image }}" alt="{{ restaurant.name }}"
         style="max-width: 600px;">
-      <a href="/restaurants/{{ restaurant._id }}/edit">edit</a>
+      <div class="d-flex justify-content-center">
+        <a href="/restaurants/{{ restaurant._id }}/edit"><i class="fas fa-pencil-alt mx-2"></i></a>
+        <form action="/restaurants/{{ restaurant._id }}/delete" method="POST" style="display: inline;">
+          <button type="submit" style="border: none;" class="fas fa-times-circle"></button>
+      </div>
+      </form>
     </div>
   </div>
 </div>
