@@ -1,11 +1,7 @@
-const deleteBtn = document.querySelectorAll('.fa-times-circle')
-deleteBtn.forEach(btn => {
-  btn.addEventListener('click', () => {
-    if (window.confirm('Do you really want to delete this restaurant ?')) {
-      console.log('123')
-    }
-  })
-})
+//刪除前再次確認
+function deleteCheckAgain() {
+  return window.confirm('Do you really want to delete this restaurant ?')
+}
 
 const pathname = window.location.pathname
 if (pathname === '/search') {

@@ -43,7 +43,8 @@
                   <a href="/restaurants/{{ this._id }}/edit">
                     <i class="fas fa-pencil-alt mx-2"></i>
                   </a>
-                  <form action="./restaurants/{{ this._id }}/delete" method="POST" style="display: inline;">
+                  <form action="./restaurants/{{ this._id }}/delete" method="POST" style="display: inline;"
+                    id='delete-form' onsubmit="return deleteCheckAgain()">
                     <button type="submit" style="border: none; margin: 0 -0.3rem; background: transparent;"
                       class="fas fa-times-circle">
                     </button>
