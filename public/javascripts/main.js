@@ -8,7 +8,7 @@ if (pathname === '/search') {
   })
 }
 
-if (pathname.includes('/edit')) {
+if (pathname.includes('/edit') || pathname.includes('/new')) {
   const container = document.querySelector('.container')
   window.addEventListener('load', () => {
     //圖片載入完成才執行滑動
@@ -22,4 +22,12 @@ if (pathname.includes('/restaurants')) {
     //圖片載入完成才執行滑動
     restaurantTitle.scrollIntoView({ behavior: 'smooth' })
   })
+}
+
+const deleteBtn = document.querySelector('.fa-times-circle')
+deleteBtn.addEventListener('click', e => {
+  console.log('123')
+})
+if (pathname.includes('delete')) {
+  console.log('delete')
 }
