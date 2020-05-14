@@ -7,13 +7,8 @@ A simple restaurant website built with Node.js and Express.
 3. Create a restaurant page **(NEW)**
 4. Editor's tool in info-card and detail-page **(NEW)**
 5. Log-in **(*In Progress*)**
- 
 
-
-
-![](https://i.imgur.com/gRmmYfZ.jpg)
-
-
+![](https://i.imgur.com/2yZXYGx.jpg)
 
 ## Getting Started
 Clone repository to your local computer
