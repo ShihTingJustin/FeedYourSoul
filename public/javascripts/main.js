@@ -1,5 +1,14 @@
-const pathname = window.location.pathname
+const deleteBtn = document.querySelectorAll('.fa-times-circle')
+console.log(deleteBtn)
+deleteBtn.forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (window.confirm('Do you really want to delete this restaurant ?')) {
+      console.log('123')
+    }
+  })
+})
 
+const pathname = window.location.pathname
 if (pathname === '/search') {
   const searchBar = document.querySelector('.search-bar-outer')
   window.addEventListener('load', () => {
@@ -24,10 +33,3 @@ if (pathname.includes('/restaurants')) {
   })
 }
 
-const deleteBtn = document.querySelector('.fa-times-circle')
-deleteBtn.addEventListener('click', e => {
-  console.log('123')
-})
-if (pathname.includes('delete')) {
-  console.log('delete')
-}
