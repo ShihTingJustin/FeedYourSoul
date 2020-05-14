@@ -1,5 +1,4 @@
 const deleteBtn = document.querySelectorAll('.fa-times-circle')
-console.log(deleteBtn)
 deleteBtn.forEach(btn => {
   btn.addEventListener('click', () => {
     if (window.confirm('Do you really want to delete this restaurant ?')) {
