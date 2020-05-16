@@ -3,7 +3,6 @@ const router = express.Router()
 
 const Restaurant = require('../../models/restaurant')
 
-
 //CREATE 新增餐廳
 router.get('/new', (req, res) => {
   return res.render('new')
