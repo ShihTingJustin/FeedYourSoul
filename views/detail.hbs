@@ -39,7 +39,7 @@
         style="max-width: 600px;">
       <div class="d-flex justify-content-center">
         <a href="/restaurants/{{ restaurant._id }}/edit"><i class="fas fa-pencil-alt mx-2"></i></a>
-        <form action="/restaurants/{{ restaurant._id }}/delete" method="POST" style="display: inline;"
+        <form action="/restaurants/{{ restaurant._id }}?_method=DELETE" method="POST" style="display: inline;"
           onsubmit="return deleteCheckAgain()">
           <button type="submit" style="border: none;" class="fas fa-times-circle"></button>
       </div>

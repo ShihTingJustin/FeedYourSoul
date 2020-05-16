@@ -2,6 +2,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
+const methodOverride = require('method-override')
 const Restaurant = require('./models/restaurant')
 const app = express()
 const port = 3000
@@ -17,6 +18,7 @@ app.set('view engine', 'hbs')
 app.use(express.static('public'))
 
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(methodOverride('_method'))
 
 // setting database
 mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true })
@@ -63,20 +65,11 @@ app.get('/restaurants/:id/edit', (req, res) => {
     .then(restaurant => res.render('edit', { restaurant }))
 })
 
-app.post('/restaurants/:id/edit', (req, res) => {
+app.put('/restaurants/:id/', (req, res) => {
   const id = req.params.id
-  const { name, name_en, category, image, location, phone, google_map, rating, description } = req.body
   return Restaurant.findById(id)
     .then(restaurant => {
-      restaurant.name = name
-      restaurant.name_en = name_en
-      restaurant.category = category
-      restaurant.image = image
-      restaurant.location = location
-      restaurant.phone = phone
-      restaurant.google_map = google_map
-      restaurant.rating = rating
-      restaurant.description = description
+      restaurant = Object.assign(restaurant, req.body)
       return restaurant.save()
     })
     .then(() => res.redirect(`/restaurants/${id}`))
@@ -84,7 +77,7 @@ app.post('/restaurants/:id/edit', (req, res) => {
 })
 
 //DELETE 刪除餐廳
-app.post('/restaurants/:id/delete', (req, res) => {
+app.delete('/restaurants/:id/', (req, res) => {
   const id = req.params.id
   return Restaurant.findById(id)
     .then(restaurant => restaurant.remove())
