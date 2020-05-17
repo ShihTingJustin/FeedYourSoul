@@ -9,6 +9,6 @@ const sort = require('./modules/sort')
 router.use('/', home)
 router.use('/restaurants', restaurants)
 router.use('/search', search)
-// router.use('/sort', sort)
+router.use('/sort', sort)
 
 module.exports = router
