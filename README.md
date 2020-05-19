@@ -7,9 +7,10 @@ A simple restaurant website built with Node.js and Express.
 3. Create a restaurant page 
 4. Editor's tool in info-card and detail-page 
 5. Sort restaurant by name or rating **(NEW)**
-6. Log-in **(*In Progress*)**
+6. My favortie **(*In Progress*)**
+7. Log-in **(*In Progress*)**
 
-![](https://i.imgur.com/pXj7suK.jpg)
+![](https://i.imgur.com/x3q3l6X.jpg)
 
 ## Getting Started
 Clone repository to your local computer
