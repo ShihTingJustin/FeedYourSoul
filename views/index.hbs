@@ -3,15 +3,15 @@
 <div class="container">
   <div class="search-bar row d-flex flex-wrap justify-content-center">
     <div
-      class="input-group row m-0 d-flex justify-content-center justify-content-sm-start col-12 col-sm-8 col-md-8 col-lg-10">
+      class="input-group row m-0 d-flex justify-content-center justify-content-sm-start col-12 col-sm-8 col-md-8 col-lg-9">
       <form action="/search" method="GET"
-        class="search-area d-flex align-items-center p-0 col-6 col-sm-8 col-md-8 col-lg-4">
+        class="search-area d-flex align-items-center p-0 col-6 col-sm-8 col-md-8 col-lg-9">
         <i class="fas fa-search"></i>
         <input type="text" name="keyword" class="form-control search-input" placeholder="尋找你愛的餐廳名稱或種類"
           aria-label="Restaurant Name..." aria-describedby="search-button" value="{{ keyword }}">
       </form>
     </div>
-    <div class="dropdown form-group p-0 justify-content-sm-end col-5 col-sm-4 col-md-4 col-lg-2">
+    <div class="dropdown form-group h-100 justify-content-sm-end col-5 col-sm-4 col-md-4 col-lg-3">
       <select onchange="location = this.value;" name="sorting" id="inputState" class="form-control selector">
         <option class='selector-title selector' selected>排列</option>
         <option class='sort-asc selector' value="/sort/name/asc">餐廳名稱 (A ~ Z)</option>
