@@ -5,10 +5,17 @@ const Restaurant = require('../../models/restaurant')
 
 //READ 搜尋餐廳
 router.get('/', (req, res) => {
-  const keyword = req.query.keyword
-  return Restaurant.find({ $or: [ { name: new RegExp(keyword, 'i') }, { category: new RegExp(keyword, 'i') }] })
+  const { keyword } = req.query
+  return Restaurant.find({ $or: [{ name: new RegExp(keyword, 'i') }, { category: new RegExp(keyword, 'i') }] })
     .lean()
-    .then(restaurants => res.render('index', { restaurants, keyword: req.query.keyword }))
+    .then(restaurants => {
+      if (restaurants.length > 0) {
+        res.render('index', { restaurants, keyword: req.query.keyword })
+      } else {
+        res.render('nothing')
+      }
+
+    })
 })
 
 module.exports = router
