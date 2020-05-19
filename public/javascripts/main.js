@@ -45,9 +45,27 @@ if (pathname.includes('/restaurants')) {
 //   }
 // })
 
-// if (pathname.includes('/sort/name/asc')) {
-//   dropdownBtn.innerText = `餐廳名稱 (A ~ Z)`
-// }
+const selector = document.querySelector('.selector-title')
+const nameAsc = document.querySelector('.sort-asc')
+const nameDesc = document.querySelector('.sort-desc')
+const ratingDesc = document.querySelector('.rating-desc')
+const ratingAsc = document.querySelector('.rating-asc')
+
+if (pathname.includes('/sort/name/asc')) {
+  selector.insertBefore(nameAsc, selector.firstChild)
+}
+
+if (pathname.includes('/sort/name/desc')) {
+  selector.insertBefore(nameDesc, selector.firstChild)
+}
+
+if (pathname.includes('/sort/rating/desc')) {
+  selector.insertBefore(ratingDesc, selector.firstChild)
+}
+
+if (pathname.includes('/sort/rating/asc')) {
+  selector.insertBefore(ratingAsc, selector.firstChild)
+}
 
 // function onFocus() {
 //   document.querySelector('#blur').classList.add('blury')

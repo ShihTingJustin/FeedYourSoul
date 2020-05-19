@@ -1,40 +1,24 @@
 <!-- ./views/index.handlebars -->
 <!-- search bar -->
 <div class="container">
-  <div class="search-bar d-flex">
-    <div class="input-group">
-      <form action="/search" method="GET" class="search-area d-flex align-items-center">
+  <div class="search-bar row d-flex flex-wrap justify-content-center">
+    <div
+      class="input-group row m-0 d-flex justify-content-center justify-content-sm-start col-12 col-sm-8 col-md-8 col-lg-10">
+      <form action="/search" method="GET"
+        class="search-area d-flex align-items-center p-0 col-6 col-sm-8 col-md-8 col-lg-4">
         <i class="fas fa-search"></i>
         <input type="text" name="keyword" class="form-control search-input" placeholder="尋找你愛的餐廳名稱或種類"
-          aria-label="Restaurant Name..." aria-describedby="search-button" value="{{ keyword }}" onfocus="onFocus()"
-          onfocusout="onFocusOut()">
+          aria-label="Restaurant Name..." aria-describedby="search-button" value="{{ keyword }}">
       </form>
     </div>
-
-    {{!-- <div class="form-group">
-      <select onchange="location = this.value;" name="category" id="inputState" class="form-control">
-        <option selected></option>
-        <option value="/sort/rating/desc">家居物業</option>
-        <option>交通出行</option>
-        <option>休閒娛樂</option>
-        <option>餐飲食品</option>
-        <option>其他</option>
+    <div class="dropdown form-group p-0 justify-content-sm-end col-5 col-sm-4 col-md-4 col-lg-2">
+      <select onchange="location = this.value;" name="sorting" id="inputState" class="form-control selector">
+        <option class='selector-title selector' selected>排列</option>
+        <option class='sort-asc selector' value="/sort/name/asc">餐廳名稱 (A ~ Z)</option>
+        <option class='sort-desc selector' value="/sort/name/desc">餐廳名稱 (Z ~ A)</option>
+        <option class="rating-desc selector" value="/sort/rating/desc">顧客評價 (高 ~ 低)</option>
+        <option class="rating-asc selector" value="/sort/rating/asc">顧客評價 (低 ~ 高)</option>
       </select>
-    </div> --}}
-
-    <div class="dropdown">
-      <div class="btn-group">
-        <button type="button" class="btn btn-danger dropdown-toggle dropdown-btn" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="true">
-          排列方式
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="/sort/name/asc">餐廳名稱 (A ~ Z)</a>
-          <a class="dropdown-item" href="/sort/name/desc">餐廳名稱 (Z ~ A)</a>
-          <a class="dropdown-item" href="/sort/rating/desc">顧客評價 (高 ~ 低)</a>
-          <a class="dropdown-item" href="/sort/rating/asc">顧客評價 (低 ~ 高)</a>
-        </div>
-      </div>
     </div>
   </div>
 
