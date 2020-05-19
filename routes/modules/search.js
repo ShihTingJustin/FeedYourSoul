@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
       if (restaurants.length > 0) {
         res.render('index', { restaurants, keyword: req.query.keyword })
       } else {
-        res.render('nothing')
+        res.render('nothing', { keyword })
       }
 
     })
